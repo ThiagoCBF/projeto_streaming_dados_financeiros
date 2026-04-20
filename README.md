@@ -131,4 +131,4 @@ docker exec -it spark-gcs spark-submit \
 
 📬 Contato
 - **[LinkedIn](https://www.linkedin.com/in/thiago-cbferreira/)**  
-- **[Github]((https://github.com/ThiagoCBF))**
+- **[Github](https://github.com/ThiagoCBF)**
