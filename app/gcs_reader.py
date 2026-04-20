@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from delta import configure_spark_with_delta_pip
 import pyspark.sql.functions as F
 
-def build_spark_session(app_name="Projeto-3"):
+def build_spark_session(app_name="Projeto-Streaming"):
     builder = (
         SparkSession.builder
         .appName(app_name)
@@ -24,7 +24,7 @@ def build_spark_session(app_name="Projeto-3"):
 
 spark = build_spark_session()
 
-BUCKET_NAME = 'bucket-portfolio-projeto-3'
+BUCKET_NAME = 'bucket-portfolio-projeto-streaming'
 BRONZE_PATH = f'gs://{BUCKET_NAME}/bronze/yfinance/'
 SILVER_PATH = f'gs://{BUCKET_NAME}/silver/finance'
 DATA_PATH = SILVER_PATH + '/financial_data'
