@@ -6,6 +6,8 @@ Este projeto simula uma arquitetura moderna de **engenharia de dados em tempo re
 
 O pipeline foi projetado para representar um ambiente real de empresa, separando processamento em **camada local (on-premises via Docker)** e **camada cloud (Google Cloud Platform)**, com foco em ingestão contínua, processamento distribuído e análise de dados.
 
+Link para Download Jar: https://repo1.maven.org/maven2/com/google/cloud/bigdataoss/gcs-connector/hadoop3-2.2.5/gcs-connector-hadoop3-2.2.5-shaded.jar
+
 ---
 
 ## 🧠 Objetivo do Projeto
@@ -19,62 +21,19 @@ Simular um sistema de **data streaming financeiro** capaz de:
 - Visualizar insights em dashboards no Apache Superset
 
 ---
+<h2 align="center">🏗️ Arquitetura do Projeto</h2>
 
-## 🏗️ Arquitetura do Sistema
-
-### 🔹 Fase 1 — Fonte de Dados
-- API: **Yahoo Finance**
-- Responsável por fornecer cotações de ativos financeiros em tempo real
-
-### 🔹 Fase 2 — Ambiente On-Premises (Docker)
-
-Infraestrutura local responsável pela ingestão e pré-processamento dos dados.
-
-#### 📌 Componentes:
-
-- **carteira.txt**
-  - Lista de ativos financeiros monitorados (tickers)
-
-- **web_socket_listener**
-  - Coleta dados da API Yahoo Finance
-  - Simula streaming contínuo de mercado
-
-- **Kafka (infraestrutura disponível)**
-  - Broker de mensagens configurado via Docker
-  - Preparado para evolução do pipeline de streaming
-
-- **Spark Streaming (gcs_writer / gcs_reader)**
-  - Processamento dos dados em tempo real
-  - Escrita e leitura no Data Lake
-
-
-
-### 🔹 Fase 3 — Ambiente Cloud (Google Cloud Platform)
-
-Camada de armazenamento e análise escalável.
-
-#### ☁️ Componentes:
-
-- **IAM (Identity and Access Management)**
-  - Controle de acesso e permissões no GCP
-
-- **Google Cloud Storage (GCS)**
-  - Data Lake em camadas:
-    - Bronze (dados brutos)
-    - Silver (dados tratados em Parquet)
-
-- **BigQuery**
-  - Data Warehouse para consultas analíticas em SQL
-
-
-
-### 🔹 Fase 4 — Visualização (BI Layer)
-
-- **Apache Superset**
-  - Criação de dashboards interativos
-  - Análise de variação de preços de ativos em tempo real
+<p align="center">
+  <img src="assets/ArquiteturaProjeto.png" width="55%" />
+</p>
 
 ---
+
+<h2 align="center">📊 Dashboard Financeiro</h2>
+
+<p align="center">
+  <img src="assets/print_graficos.png" width="100%" />
+</p>
 
 ## 🔄 Arquitetura do Pipeline
 
